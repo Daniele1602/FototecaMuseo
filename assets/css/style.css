@@ -1,0 +1,194 @@
+#icon {
+    position: absolute;
+    z-index: 10;
+    margin-left: 6%;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+.image {
+    background-size: contain !important;
+    background-repeat: no-repeat;
+}
+
+#info, #advancedResearchForm {
+    justify-content: center;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    left: 28%;
+    top: 14%;
+    vertical-align: middle;
+    max-width: 43%;
+    border-radius: 5%;
+    padding: 2%;
+    position: absolute;
+    z-index: 9;
+    background-color: var(--bg--color)/* rgba(8, 8, 8, 0.925)*/;
+    color: var(--txt--color);
+}
+
+#advancedResearchForm {
+  left: 22%;
+  grid-template-columns: repeat(2, 0.9fr);
+  column-gap: 10px;
+}
+
+#advancedResearchForm > p {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+#advancedResearchForm > p, #advancedResearchForm > input, #advancedResearchForm > .switch {
+  margin-top: 20px;
+}
+
+#advancedResearchForm > .switch {
+  margin-top: 20px !important;
+  margin-left: 10px;
+}
+
+.gridRow {
+  grid-column-start:1;
+  grid-column-end: 3;
+  text-align: center;
+}
+
+button.gridRow {
+  height: 40px;
+}
+
+.closeSearch {
+  display: block;
+  margin-left: 85%;
+  margin-bottom: auto;
+}
+
+#info {
+  
+  transition: all 0.5s ease-out; 
+  transform: scale(0);
+}
+
+#info.shown {
+    transition: all 1s;
+    transform: scale(1); 
+}
+
+#info > .th {
+    text-align: right;
+}
+
+#info > .td {
+    text-align: left;
+}
+
+#research > input[type=text], #advancedResearch {
+    margin-top: 2%;
+}
+
+#errorMessage {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    padding: 20px;
+    background-color: #800000; /* Red */
+    margin-top: 10px;
+    left: 28%;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px black;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  #advancedResearch {
+    display: block;
+    width: 100%;
+    background-color: var(--bg--color);
+    padding: 14px 28px;
+    color: var(--txt--color);
+    cursor: pointer;
+    text-align: center;
+  }
+
+@media screen and (max-width: 980px) {
+    #info, #errorMessage {
+        left: 20%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #info > .th {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    #info, #errorMessage {
+        left: 25%;
+    }
+}

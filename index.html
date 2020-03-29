@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Lens by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Progetto fototeca</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/Utilities.js"></script>
+	<script src="assets/js/UI.js"></script>
+	<script>
+		$(document).ready(() => {
+			Init();
+		})
+	</script>
+</head>
+
+<body class="is-preload-0 is-preload-1 is-preload-2">
+
+	<!--   TEMPLATES   -->
+	<template id="templateIndex">
+		<article code="{1}">
+			<a class="thumbnail" href="{0}"><img src="{0}" alt="" style="width: 100%; height: 100%;" /></a>
+		</article>
+	</template>
+
+
+	<div id="errorMessage">
+		<span class="closebtn" onclick="(() => {
+			$('#errorMessage').slideUp(300);
+			window.clearInterval();
+		})()">&times;</span>
+		<span id="errorText"></span>
+	</div>
+	<div id="advancedResearchForm">
+		<p></p>
+		<div style="float: right; height: 10%;">
+			<div class="closeSearch" onclick="$('#advancedResearchForm').slideUp(300)"></div>
+		</div>
+		<p>Titolo:</p>
+		<input id="titolo" type="text" placeholder="Titolo...">
+		<p>Intestazione: </p>
+		<input id="intestazione" type="text" placeholder="Fondo...">
+		<p class="gridRow">Intervallo di date:</p>
+		<input type="date" id="date1">
+		<input type="date" id="date2">
+		<p>Inlcudi album:</p>
+		<label class="switch">
+			<input type="checkbox" id="includeAlbum">
+			<span class="slider"></span>
+		</label>
+		<p style="margin:0;">Inlcudi parola chiave:</p>
+		<label class="switch">
+			<input type="checkbox" id="includeKey">
+			<span class="slider"></span>
+		</label>
+		<button class="gridRow" onclick="AdvancedResearch()">Cerca</button>
+	</div>
+	<!-- Main -->
+	<div id="main">
+		<!-- Header -->
+		<header id="header">
+			<div>
+				<p id="changeTheme" style="margin: 0;">Imposta tema chiaro</p>
+				<label class="switch">
+					<input type="checkbox" onchange="ChangeTheme($(this).is(':checked'))">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<h1>Fototeca</h1>
+			<p>Un sito che permette la visualizzazione delle foto<br />raccolte dal museo di Rovereto</p>
+			<ul class="icons">
+				<!--<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<!--<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>-->
+			</ul>
+			<div id="research">
+				<select id="album">
+				</select>
+				<input id="string" type="text" placeholder="Parametro...">
+				<button id="advancedResearch" onclick="(() => {
+					let form = $('#advancedResearchForm');
+					if (form.is(':hidden')) {
+						form.slideDown(300);
+					}
+					else {
+						form.slideUp(300);
+					}
+				})()">Ricerca avanzata</button>
+			</div>
+		</header>
+
+		<!-- Thumbnail -->
+		<section id="thumbnails">
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
