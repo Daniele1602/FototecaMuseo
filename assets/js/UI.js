@@ -49,7 +49,6 @@ let UpdateImages = function (callerID) {
     let url = Defaults.BaseInfoURL;
     if (callerID === "string" && $("#" + callerID).val() !== "") {
         url += "Dati/All/Contiene/" + $("#" + callerID).val();
-        console.log(url)
     }
     else if (callerID === "album") {
         url += "Dati/Album/" + $("#" + callerID).val();
